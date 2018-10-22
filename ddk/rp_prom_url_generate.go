@@ -1,6 +1,9 @@
 package ddk
 
-import "github.com/dcsunny/pinduoduo-sdk/util"
+import (
+	"github.com/dcsunny/pinduoduo-sdk/common"
+	"github.com/dcsunny/pinduoduo-sdk/util"
+)
 
 /**
 生成红包推广链接
@@ -19,7 +22,7 @@ type RpPromUrlGenerateResult struct {
 	RpPromotionUrlGenerateResponse struct {
 		UrlList []RpPromUrlGenerateInfo `json:"url_list"`
 	} `json:"rp_promotion_url_generate_response"`
-	util.CommonResult
+	common.CommonResult
 }
 
 type RpPromUrlGenerateInfo struct {
@@ -57,7 +60,7 @@ func (this *DuoduoKe) RpPromUrlGenerate(p *RpPromUrlGenerateParams) (*RpPromUrlG
 		return nil, err
 	}
 
-	err = util.CheckErrCode(result.CommonResult)
+	err = common.CheckErrCode(result.CommonResult)
 	if err != nil {
 		return nil, err
 	}

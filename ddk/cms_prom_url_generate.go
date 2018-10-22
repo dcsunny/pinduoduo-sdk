@@ -1,6 +1,9 @@
 package ddk
 
-import "github.com/dcsunny/pinduoduo-sdk/util"
+import (
+	"github.com/dcsunny/pinduoduo-sdk/common"
+	"github.com/dcsunny/pinduoduo-sdk/util"
+)
 
 /**
 生成商城推广链接接口
@@ -22,7 +25,7 @@ type CmsPromUrlGenerateResult struct {
 		UrlList []CmsPromUrlGenerateInfo `json:"url_list"`
 		Total   int                      `json:"total"` //数量
 	} `json:"cms_promotion_url_generate_response"`
-	util.CommonResult
+	common.CommonResult
 }
 
 type CmsPromUrlGenerateInfo struct {
@@ -47,7 +50,7 @@ func (this *DuoduoKe) CmsPromUrlGenerate(p *CmsPromUrlGenerateParams) (*CmsPromU
 		return nil, err
 	}
 
-	err = util.CheckErrCode(result.CommonResult)
+	err = common.CheckErrCode(result.CommonResult)
 	if err != nil {
 		return nil, err
 	}

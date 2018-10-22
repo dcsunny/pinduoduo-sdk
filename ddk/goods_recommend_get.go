@@ -1,6 +1,7 @@
 package ddk
 
 import (
+	"github.com/dcsunny/pinduoduo-sdk/common"
 	"github.com/dcsunny/pinduoduo-sdk/util"
 )
 
@@ -11,7 +12,7 @@ type GoodsRecommendResult struct {
 	GoodsBasicDetailResponse struct {
 		List []GoodsRecommendInfo `json:"list"`
 	} `json:"goods_basic_detail_response"`
-	util.CommonResult
+	common.CommonResult
 }
 type GoodsRecommendParams struct {
 	Offset      *int `json:"offset,omitempty"`       //从多少位置开始请求；默认值 ： 0
@@ -85,7 +86,7 @@ func (this *DuoduoKe) GetGoodsRecommend(p *GoodsRecommendParams) (*GoodsRecommen
 		return nil, err
 	}
 
-	err = util.CheckErrCode(result.CommonResult)
+	err = common.CheckErrCode(result.CommonResult)
 	if err != nil {
 		return nil, err
 	}

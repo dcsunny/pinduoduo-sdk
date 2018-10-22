@@ -1,6 +1,9 @@
 package ddk
 
-import "github.com/dcsunny/pinduoduo-sdk/util"
+import (
+	"github.com/dcsunny/pinduoduo-sdk/common"
+	"github.com/dcsunny/pinduoduo-sdk/util"
+)
 
 /**
 生成多多进宝商品推广链接
@@ -20,7 +23,7 @@ type GoodsPromotionUrlGenerateResult struct {
 	GoodsPromotionUrlGenerateResponse struct {
 		GoodsPromotionUrlList []GoodsPromotionUrlGenerateInfo `json:"goods_promotion_url_list"`
 	} `json:"goods_promotion_url_generate_response"`
-	util.CommonResult
+	common.CommonResult
 }
 
 type GoodsPromotionUrlGenerateInfo struct {
@@ -43,7 +46,7 @@ func (this *DuoduoKe) GoodsPromotionUrlGenerate(p *GoodsPromotionUrlGeneratePara
 		return nil, err
 	}
 
-	err = util.CheckErrCode(result.CommonResult)
+	err = common.CheckErrCode(result.CommonResult)
 	if err != nil {
 		return nil, err
 	}

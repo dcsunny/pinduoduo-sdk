@@ -1,6 +1,9 @@
 package ddk
 
-import "github.com/dcsunny/pinduoduo-sdk/util"
+import (
+	"github.com/dcsunny/pinduoduo-sdk/common"
+	"github.com/dcsunny/pinduoduo-sdk/util"
+)
 
 /**
 查询已经生成的推广位信息
@@ -15,7 +18,7 @@ type GoodsPidQueryResult struct {
 		PIdList    []GoodsPidQueryInfo `json:"p_id_list"`   //多多进宝推广位对象列表
 		TotalCount int                 `json:"total_count"` //返回推广位总数
 	} `json:"p_id_query_response"`
-	util.CommonResult
+	common.CommonResult
 }
 
 type GoodsPidQueryInfo struct {
@@ -35,7 +38,7 @@ func (this *DuoduoKe) GoodsPidQuery(p *GoodsPidQueryParams) (*GoodsPidQueryResul
 		return nil, err
 	}
 
-	err = util.CheckErrCode(result.CommonResult)
+	err = common.CheckErrCode(result.CommonResult)
 	if err != nil {
 		return nil, err
 	}

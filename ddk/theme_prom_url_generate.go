@@ -1,6 +1,9 @@
 package ddk
 
-import "github.com/dcsunny/pinduoduo-sdk/util"
+import (
+	"github.com/dcsunny/pinduoduo-sdk/common"
+	"github.com/dcsunny/pinduoduo-sdk/util"
+)
 
 /**
 多多进宝主题活动推广链接生成
@@ -21,7 +24,7 @@ type ThemePromUrlGenerateResult struct {
 	ThemePromotionUrlGenerateResponse struct {
 		UrlList []ThemePromUrlGenerateInfo `json:"url_list"` //主题活动推广url列表
 	} `json:"theme_promotion_url_generate_response"`
-	util.CommonResult
+	common.CommonResult
 }
 
 type ThemePromUrlGenerateInfo struct {
@@ -45,7 +48,7 @@ func (this *DuoduoKe) ThemePromUrlGenerate(p *ThemePromUrlGenerateParams) (*Them
 		return nil, err
 	}
 
-	err = util.CheckErrCode(result.CommonResult)
+	err = common.CheckErrCode(result.CommonResult)
 	if err != nil {
 		return nil, err
 	}

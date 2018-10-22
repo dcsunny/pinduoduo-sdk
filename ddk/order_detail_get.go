@@ -1,6 +1,9 @@
 package ddk
 
-import "github.com/dcsunny/pinduoduo-sdk/util"
+import (
+	"github.com/dcsunny/pinduoduo-sdk/common"
+	"github.com/dcsunny/pinduoduo-sdk/util"
+)
 
 /**
 查询订单详情
@@ -11,7 +14,7 @@ type OrderDetailGetParams struct {
 
 type OrderDetailGetResult struct {
 	OrderDetailResponse OrderDetailGetInfo `json:"order_detail_response"`
-	util.CommonResult
+	common.CommonResult
 }
 
 type OrderDetailGetInfo struct {
@@ -58,7 +61,7 @@ func (this *DuoduoKe) OrderDetailGet(p *OrderDetailGetParams) (*OrderDetailGetRe
 		return nil, err
 	}
 
-	err = util.CheckErrCode(result.CommonResult)
+	err = common.CheckErrCode(result.CommonResult)
 	if err != nil {
 		return nil, err
 	}

@@ -1,6 +1,9 @@
 package ddk
 
-import "github.com/dcsunny/pinduoduo-sdk/util"
+import (
+	"github.com/dcsunny/pinduoduo-sdk/common"
+	"github.com/dcsunny/pinduoduo-sdk/util"
+)
 
 /**
 多多进宝主题商品查询
@@ -15,7 +18,7 @@ type ThemeGoodsSearchResult struct {
 		GoodsList []ThemeGoodsSearchInfo `json:"goods_list"`
 		Total     int                    `json:"total"`
 	} `json:"theme_list_get_response"`
-	util.CommonResult
+	common.CommonResult
 }
 
 type ThemeGoodsSearchInfo struct {
@@ -54,7 +57,7 @@ func (this *DuoduoKe) ThemeGoodsSearch(p *ThemeGoodsSearchParams) (*ThemeGoodsSe
 		return nil, err
 	}
 
-	err = util.CheckErrCode(result.CommonResult)
+	err = common.CheckErrCode(result.CommonResult)
 	if err != nil {
 		return nil, err
 	}

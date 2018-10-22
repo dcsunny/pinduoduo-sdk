@@ -1,6 +1,9 @@
 package ddk
 
-import "github.com/dcsunny/pinduoduo-sdk/util"
+import (
+	"github.com/dcsunny/pinduoduo-sdk/common"
+	"github.com/dcsunny/pinduoduo-sdk/util"
+)
 
 /**
 查询多多进宝主题列表
@@ -16,7 +19,7 @@ type ThemeListGetResult struct {
 		ThemeList []ThemeListGetInfo `json:"theme_list"` //返回的主题列表
 		Total     int                `json:"total"`      //返回的元素数量
 	} `json:"theme_list_get_response"`
-	util.CommonResult
+	common.CommonResult
 }
 
 type ThemeListGetInfo struct {
@@ -36,7 +39,7 @@ func (this *DuoduoKe) ThemeListGet(p *ThemeListGetParams) (*ThemeListGetResult, 
 		return nil, err
 	}
 
-	err = util.CheckErrCode(result.CommonResult)
+	err = common.CheckErrCode(result.CommonResult)
 	if err != nil {
 		return nil, err
 	}

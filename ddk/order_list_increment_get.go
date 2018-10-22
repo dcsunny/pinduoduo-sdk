@@ -1,6 +1,9 @@
 package ddk
 
-import "github.com/dcsunny/pinduoduo-sdk/util"
+import (
+	"github.com/dcsunny/pinduoduo-sdk/common"
+	"github.com/dcsunny/pinduoduo-sdk/util"
+)
 
 /**
 增量查询推广订单信息（根据最后更新时间）
@@ -18,7 +21,7 @@ type OrderListIncrementGetResult struct {
 	} `json:"order_list_get_response"`
 	TotalCount      int `json:"total_count"`       //请求到的结果数
 	DuoCouponAmount int `json:"duo_coupon_amount"` //使用多多进宝券的面额（单位为分）
-	util.CommonResult
+	common.CommonResult
 }
 
 type OrderListIncrementGetInfo struct {
@@ -55,7 +58,7 @@ func (this *DuoduoKe) OrderListIncrementGet(p *OrderListIncrementGetParams) (*Or
 		return nil, err
 	}
 
-	err = util.CheckErrCode(result.CommonResult)
+	err = common.CheckErrCode(result.CommonResult)
 	if err != nil {
 		return nil, err
 	}

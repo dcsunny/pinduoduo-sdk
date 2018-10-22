@@ -1,30 +1,25 @@
-package ddk
+package common
 
 import (
 	"fmt"
-
 	"time"
 
 	"github.com/dcsunny/pinduoduo-sdk/util"
 )
 
-const (
-	CommonURL = "http://gw-api.pinduoduo.com/api/router?type=%s&data_type=JSON&timestamp=%d&client_id=%s&sign=%s"
-)
-
-type DuoduoKe struct {
+type Service struct {
 	ClientID     string `json:"client_id"`
 	ClientSecret string `json:"client_secret"`
 }
 
-func NewDuoduoKe(clientID string, clientSecret string) *DuoduoKe {
-	return &DuoduoKe{
+func NewService(clientID string, clientSecret string) *Service {
+	return &Service{
 		ClientID:     clientID,
 		ClientSecret: clientSecret,
 	}
 }
 
-func (this *DuoduoKe) GetURL(apiType string, accessToken string, params map[string]interface{}, paramsURL string) string {
+func (this *Service) GetURL(apiType string, accessToken string, params map[string]interface{}, paramsURL string) string {
 	timestamp := time.Now().Unix()
 	sign := util.Signature(apiType, this.ClientID, this.ClientSecret, accessToken, timestamp, params)
 

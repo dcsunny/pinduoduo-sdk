@@ -1,6 +1,9 @@
 package ddk
 
-import "github.com/dcsunny/pinduoduo-sdk/util"
+import (
+	"github.com/dcsunny/pinduoduo-sdk/common"
+	"github.com/dcsunny/pinduoduo-sdk/util"
+)
 
 /**
 获取并查看多多客拉新的奖励账单
@@ -18,7 +21,7 @@ type AppNewBillListGetResult struct {
 		List []AppNewBillListGetInfo `json:"list"` //账单列表对象
 	} `json:"app_new_bill_list_response"`
 	TotalCount int `json:"total_count"` //账单总数
-	util.CommonResult
+	common.CommonResult
 }
 
 type AppNewBillListGetInfo struct {
@@ -46,7 +49,7 @@ func (this *DuoduoKe) AppNewBillListGet(p *AppNewBillListGetParams) (*AppNewBill
 		return nil, err
 	}
 
-	err = util.CheckErrCode(result.CommonResult)
+	err = common.CheckErrCode(result.CommonResult)
 	if err != nil {
 		return nil, err
 	}

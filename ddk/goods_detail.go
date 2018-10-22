@@ -1,6 +1,9 @@
 package ddk
 
-import "github.com/dcsunny/pinduoduo-sdk/util"
+import (
+	"github.com/dcsunny/pinduoduo-sdk/common"
+	"github.com/dcsunny/pinduoduo-sdk/util"
+)
 
 /**
 查询多多进宝商品详情
@@ -13,7 +16,7 @@ type GoodsDetailResult struct {
 	GoodsDetailResponse struct {
 		GoodsDetails []GoodsDetailInfo `json:"goods_details"` //多多进宝商品对象列表
 	} `json:"goods_detail_response"`
-	util.CommonResult
+	common.CommonResult
 }
 
 type GoodsDetailInfo struct {
@@ -60,7 +63,7 @@ func (this *DuoduoKe) GoodsDetail(p *GoodsDetailParams) (*GoodsDetailResult, err
 		return nil, err
 	}
 
-	err = util.CheckErrCode(result.CommonResult)
+	err = common.CheckErrCode(result.CommonResult)
 	if err != nil {
 		return nil, err
 	}

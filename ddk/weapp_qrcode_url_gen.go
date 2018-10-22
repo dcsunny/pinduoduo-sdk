@@ -1,6 +1,9 @@
 package ddk
 
-import "github.com/dcsunny/pinduoduo-sdk/util"
+import (
+	"github.com/dcsunny/pinduoduo-sdk/common"
+	"github.com/dcsunny/pinduoduo-sdk/util"
+)
 
 /**
 多多客生成单品推广小程序二维码url
@@ -16,7 +19,7 @@ type WeappQrcodeUrlGenResult struct {
 	WeappQrcodeGenerateResponse struct {
 		Url string `json:"url"` //单品推广小程序二维码url
 	} `json:"weapp_qrcode_generate_response"`
-	util.CommonResult
+	common.CommonResult
 }
 
 func (this *DuoduoKe) WeappQrcodeUrlGen(p *WeappQrcodeUrlGenParams) (*WeappQrcodeUrlGenResult, error) {
@@ -29,7 +32,7 @@ func (this *DuoduoKe) WeappQrcodeUrlGen(p *WeappQrcodeUrlGenParams) (*WeappQrcod
 		return nil, err
 	}
 
-	err = util.CheckErrCode(result.CommonResult)
+	err = common.CheckErrCode(result.CommonResult)
 	if err != nil {
 		return nil, err
 	}
