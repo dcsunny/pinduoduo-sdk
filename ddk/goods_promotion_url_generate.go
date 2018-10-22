@@ -27,12 +27,12 @@ type GoodsPromotionUrlGenerateResult struct {
 }
 
 type GoodsPromotionUrlGenerateInfo struct {
-	WeAppWebViewsShortUrl string `json:"we_app_web_views_short_url"`
-	WeAppWebViewUrl       string `json:"p_id_name"`
-	MobileShortUrl        string `json:"mobile_short_url"`
-	MobileUrl             string `json:"mobile_url"`
-	ShortUrl              string `json:"short_url"`
-	Url                   string `json:"url"`
+	WeAppWebViewShortUrl string `json:"we_app_web_view_short_url"`
+	WeAppWebViewUrl      string `json:"we_app_web_view_url"`
+	MobileShortUrl       string `json:"mobile_short_url"`
+	MobileUrl            string `json:"mobile_url"`
+	ShortUrl             string `json:"short_url"`
+	Url                  string `json:"url"`
 }
 
 func (this *DuoduoKe) GoodsPromotionUrlGenerate(p *GoodsPromotionUrlGenerateParams) (*GoodsPromotionUrlGenerateResult, error) {
