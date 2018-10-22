@@ -12,7 +12,6 @@ type CommonResult struct {
 }
 
 var (
-	RequestError     = errors.New("request return status error")
 	ParamsError      = errors.New("params error")
 	SystemError      = errors.New("system error")
 	ClientIDError    = errors.New("client id error")

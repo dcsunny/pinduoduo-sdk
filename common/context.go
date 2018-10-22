@@ -7,19 +7,19 @@ import (
 	"github.com/dcsunny/pinduoduo-sdk/util"
 )
 
-type Service struct {
+type Context struct {
 	ClientID     string `json:"client_id"`
 	ClientSecret string `json:"client_secret"`
 }
 
-func NewService(clientID string, clientSecret string) *Service {
-	return &Service{
+func NewContext(clientID string, clientSecret string) *Context {
+	return &Context{
 		ClientID:     clientID,
 		ClientSecret: clientSecret,
 	}
 }
 
-func (this *Service) GetURL(apiType string, accessToken string, params map[string]interface{}, paramsURL string) string {
+func (this *Context) GetURL(apiType string, accessToken string, params map[string]interface{}, paramsURL string) string {
 	timestamp := time.Now().Unix()
 	sign := util.Signature(apiType, this.ClientID, this.ClientSecret, accessToken, timestamp, params)
 

@@ -2,9 +2,14 @@ package util
 
 import (
 	"encoding/json"
+	"errors"
 	"io"
 	"io/ioutil"
 	"net/http"
+)
+
+var (
+	RequestError = errors.New("request return status error")
 )
 
 func HttpPOST(url string, paramsBody io.Reader, result interface{}) error {
