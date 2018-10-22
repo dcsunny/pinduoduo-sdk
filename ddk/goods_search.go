@@ -39,10 +39,10 @@ type GoodsSearchInfo struct {
 	CreateAt             int64   `json:"create_at"`               //创建时间（unix时间戳）
 	GoodsID              int64   `json:"goods_id"`                //商品id
 	GoodsName            string  `json:"goods_name"`              //商品名称
-	GoodsDesc            *string `json:"goods_desc"`              //商品描述
+	GoodsDesc            string  `json:"goods_desc"`              //商品描述
 	GoodsThumbnailUrl    string  `json:"goods_thumbnail_url"`     //商品缩略图
 	GoodsImageUrl        string  `json:"goods_image_url"`         //商品主图
-	GoodsGalleryUrls     *string `json:"goods_gallery_urls"`      //商品轮播图
+	GoodsGalleryUrls     string  `json:"goods_gallery_urls"`      //商品轮播图
 	SoldQuantity         int     `json:"sold_quantity"`           //已售卖件数
 	MinGroupPrice        int     `json:"min_group_price"`         //最小拼团价（单位为分）
 	MinNormalPrice       int     `json:"min_normal_price"`        //最小单买价格（单位为分）
@@ -65,7 +65,7 @@ type GoodsSearchInfo struct {
 	PromotionRate        int     `json:"promotion_rate"`          //佣金比例，千分比
 	GoodsEvalScore       float64 `json:"goods_eval_score"`        //商品评价分
 	GoodsEvalCount       int     `json:"goods_eval_count"`        //商品评价数量
-	CatID                *int64  `json:"cat_id"`                  //描述评分
+	CatID                int64   `json:"cat_id"`                  //描述评分
 	AvgDesc              int     `json:"avg_desc"`                //物流评分
 	AvgLgst              int     `json:"avg_lgst"`                //服务评分
 	AvgServ              int     `json:"avg_serv"`                //描述分击败同类店铺百分比

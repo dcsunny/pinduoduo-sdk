@@ -35,7 +35,18 @@ func FormatURLParams(params interface{}) (map[string]interface{}, string) {
 		decoder.Decode(&result)
 		if len(result) != 0 {
 			for k, v := range result {
-				paramsURL = paramsURL + fmt.Sprintf("&%s=%v", k, v)
+				switch v.(type) {
+				case []interface{}:
+					m, _ := json.Marshal(v)
+					mStr := string(m)
+					result[k] = mStr
+					paramsURL = paramsURL + fmt.Sprintf("&%s=%v", k, mStr)
+					break
+				default:
+					paramsURL = paramsURL + fmt.Sprintf("&%s=%v", k, v)
+					break
+				}
+
 			}
 		}
 	}
