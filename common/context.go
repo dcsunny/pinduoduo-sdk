@@ -24,6 +24,9 @@ func (this *Context) GetURL(apiType string, accessToken string, params map[strin
 	sign := util.Signature(apiType, this.ClientID, this.ClientSecret, accessToken, timestamp, params)
 
 	url := fmt.Sprintf(CommonURL, apiType, timestamp, this.ClientID, sign)
+	if accessToken != "" {
+		url = url + "&access_token=" + accessToken
+	}
 	url = url + paramsURL
 	return url
 }
