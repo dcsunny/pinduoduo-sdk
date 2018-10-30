@@ -3,6 +3,7 @@ package util
 import (
 	"encoding/json"
 	"fmt"
+	"net/url"
 	"strings"
 )
 
@@ -40,7 +41,13 @@ func FormatURLParams(params interface{}) (map[string]interface{}, string) {
 					m, _ := json.Marshal(v)
 					mStr := string(m)
 					result[k] = mStr
+					mStr = url.QueryEscape(mStr)
 					paramsURL = paramsURL + fmt.Sprintf("&%s=%v", k, mStr)
+					break
+				case string:
+					vStr := v.(string)
+					vStr = url.QueryEscape(vStr)
+					paramsURL = paramsURL + fmt.Sprintf("&%s=%s", k, vStr)
 					break
 				default:
 					paramsURL = paramsURL + fmt.Sprintf("&%s=%v", k, v)
