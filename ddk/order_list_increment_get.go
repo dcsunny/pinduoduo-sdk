@@ -17,10 +17,9 @@ type OrderListIncrementGetParams struct {
 
 type OrderListIncrementGetResult struct {
 	OrderListGetResponse struct {
-		OrderList []OrderListIncrementGetInfo `json:"order_list"` //多多进宝推广位对象列表
+		OrderList  []OrderListIncrementGetInfo `json:"order_list"`  //多多进宝推广位对象列表
+		TotalCount int                         `json:"total_count"` //请求到的结果数
 	} `json:"order_list_get_response"`
-	TotalCount      int `json:"total_count"`       //请求到的结果数
-	DuoCouponAmount int `json:"duo_coupon_amount"` //使用多多进宝券的面额（单位为分）
 	common.CommonResult
 }
 
@@ -51,7 +50,6 @@ func (this *DuoduoKe) OrderListIncrementGet(p *OrderListIncrementGetParams) (*Or
 	apiType := `pdd.ddk.order.list.increment.get`
 	params, paramsURL := util.FormatURLParams(p)
 	url := this.GetURL(apiType, "", params, paramsURL)
-
 	var result OrderListIncrementGetResult
 	err := util.HttpPOST(url, nil, &result)
 	if err != nil {
