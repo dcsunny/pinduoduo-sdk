@@ -13,8 +13,14 @@ var (
 )
 
 func HttpPOST(url string, paramsBody io.Reader, result interface{}) error {
-	req, _ := http.NewRequest("POST", url, paramsBody)
-	res, _ := http.DefaultClient.Do(req)
+	req, err := http.NewRequest("POST", url, paramsBody)
+	if err != nil {
+		return err
+	}
+	res, err := http.DefaultClient.Do(req)
+	if err != nil {
+		return err
+	}
 
 	defer res.Body.Close()
 
@@ -22,7 +28,7 @@ func HttpPOST(url string, paramsBody io.Reader, result interface{}) error {
 		return RequestError
 	}
 	body, _ := ioutil.ReadAll(res.Body)
-	err := json.Unmarshal(body, &result)
+	err = json.Unmarshal(body, &result)
 	if err != nil {
 
 		return err
