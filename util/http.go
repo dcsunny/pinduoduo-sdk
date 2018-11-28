@@ -6,6 +6,7 @@ import (
 	"io"
 	"io/ioutil"
 	"net/http"
+	"fmt"
 )
 
 var (
@@ -30,7 +31,7 @@ func HttpPOST(url string, paramsBody io.Reader, result interface{}) error {
 	body, _ := ioutil.ReadAll(res.Body)
 	err = json.Unmarshal(body, &result)
 	if err != nil {
-
+		fmt.Println(fmt.Sprintf("json err,json:%s", string(body)))
 		return err
 	}
 
