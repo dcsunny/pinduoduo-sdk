@@ -21,8 +21,10 @@ var (
 )
 
 func CheckErrCode(commonResult CommonResult) error {
-	j, _ := json.Marshal(commonResult)
-	fmt.Println(fmt.Sprintf("err code err:%s", string(j)))
+	if commonResult.ErrorResponse.ErrorCode != 0 {
+		j, _ := json.Marshal(commonResult)
+		fmt.Println(fmt.Sprintf("err code err:%s", string(j)))
+	}
 	errCode := commonResult.ErrorResponse.ErrorCode
 	switch errCode {
 	case 0:
