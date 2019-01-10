@@ -1,8 +1,8 @@
 package ddk
 
 import (
-	"github.com/dcsunny/pinduoduo-sdk/util"
 	"github.com/dcsunny/pinduoduo-sdk/common"
+	"github.com/dcsunny/pinduoduo-sdk/util"
 )
 
 type LotteryUrlGenParams struct {

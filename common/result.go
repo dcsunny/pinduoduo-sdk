@@ -1,9 +1,9 @@
 package common
 
 import (
+	"encoding/json"
 	"errors"
 	"fmt"
-	"encoding/json"
 )
 
 type CommonResult struct {
