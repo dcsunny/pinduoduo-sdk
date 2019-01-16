@@ -17,6 +17,7 @@ type GoodsPromotionUrlGenerateParams struct {
 	PullNew              *bool   `json:"pull_new,omitempty"`               //是否开启订单拉新，true表示开启（订单拉新奖励特权仅支持白名单，请联系工作人员开通）
 	GenerateWeappWebview *bool   `json:"generate_weapp_webview,omitempty"` //是否生成唤起微信客户端链接，true-是，false-否，默认false
 	ZsDuoID              *int64  `json:"zs_duo_id,omitempty"`              //招商多多客ID
+	GenerateWeApp        *bool   `json:"generate_we_app"`                  //是否生成小程序推广
 }
 
 type GoodsPromotionUrlGenerateResult struct {
@@ -33,6 +34,16 @@ type GoodsPromotionUrlGenerateInfo struct {
 	MobileUrl            string `json:"mobile_url"`
 	ShortUrl             string `json:"short_url"`
 	Url                  string `json:"url"`
+	WeAppInfo            struct {
+		WeAppIconUrl      string `json:"we_app_icon_url"`
+		BannerUrl         string `json:"banner_url"`
+		Desc              string `json:"desc"`
+		SourceDisplayName string `json:"source_display_name"`
+		PagePath          string `json:"page_path"`
+		UserName          string `json:"user_name"`
+		Title             string `json:"title"`
+		AppId             string `json:"app_id"`
+	} `json:"we_app_info"`
 }
 
 func (this *DuoduoKe) GoodsPromotionUrlGenerate(p *GoodsPromotionUrlGenerateParams) (*GoodsPromotionUrlGenerateResult, error) {
@@ -45,7 +56,6 @@ func (this *DuoduoKe) GoodsPromotionUrlGenerate(p *GoodsPromotionUrlGeneratePara
 	if err != nil {
 		return nil, err
 	}
-
 	err = common.CheckErrCode(result.CommonResult)
 	if err != nil {
 		return nil, err
