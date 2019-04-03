@@ -18,6 +18,7 @@ var (
 	SystemError      = errors.New("system error")
 	ClientIDError    = errors.New("client id error")
 	AccessTokenError = errors.New("access token error")
+	NotDkkGoodsError = errors.New("非多多客商品")
 )
 
 func CheckErrCode(commonResult CommonResult) error {
@@ -35,6 +36,8 @@ func CheckErrCode(commonResult CommonResult) error {
 		return ClientIDError
 	case 50000:
 		return SystemError
+	case 50001:
+		return NotDkkGoodsError
 	case 20000:
 		return AccessTokenError
 	}
