@@ -51,6 +51,7 @@ type TopGoodsListQueryInfo struct {
 	GoodsEvalCount       int      `json:"goods_eval_count"`
 	AvgDesc              int      `json:"avg_desc"`
 	AvgLgst              int      `json:"avg_lgst"`
+	AvgServ              int      `json:"avg_serv"`
 	DescPct              float64  `json:"desc_pct"`
 	LgstPct              float64  `json:"lgst_pct"`
 	ServPct              float64  `json:"serv_pct"`
