@@ -27,7 +27,7 @@ type OrderDetailGetInfo struct {
 	OrderAmount           int    `json:"order_amount"`             //订单价格（分）
 	PromotionRate         int    `json:"promotion_rate"`           //佣金比例 千分比
 	PromotionAmount       int    `json:"promotion_amount"`         //佣金（分）
-	BatchNo               int    `json:"batch_no"`                 //结算批次号
+	BatchNo               string `json:"batch_no"`                 //结算批次号
 	OrderStatus           int    `json:"order_status"`             //订单状态
 	OrderStatusDesc       string `json:"order_status_desc"`        //订单状态描述（ -1 未支付; 0-已支付；1-已成团；2-确认收货；3-审核成功；4-审核失败（不可提现）；5-已经结算；8-非多多进宝商品（无佣金订单）;10-已处罚）
 	OrderCreateTime       int64  `json:"order_create_time"`        //订单创建时间（UNIX时间戳）
