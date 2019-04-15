@@ -74,13 +74,13 @@ type GoodsSearchInfo struct {
 	PromotionRate               int      `json:"promotion_rate"`                  //佣金比例，千分比
 	GoodsEvalScore              float64  `json:"goods_eval_score"`                //商品评价分
 	GoodsEvalCount              int      `json:"goods_eval_count"`                //商品评价数量
-	CatID                       int64    `json:"cat_id"`                          //描述评分
-	AvgDesc                     int      `json:"avg_desc"`                        //物流评分
-	AvgLgst                     int      `json:"avg_lgst"`                        //服务评分
-	AvgServ                     int      `json:"avg_serv"`                        //描述分击败同类店铺百分比
-	DescPct                     float64  `json:"desc_pct"`                        //物流分击败同类店铺百分比
-	LgstPct                     float64  `json:"lgst_pct"`                        //服务分击败同类店铺百分比
-	ServPct                     float64  `json:"serv_pct"`
+	CatID                       int64    `json:"cat_id"`                          //商品类目id
+	AvgDesc                     int      `json:"avg_desc"`                        //描述评分
+	AvgLgst                     int      `json:"avg_lgst"`                        //物流评分
+	AvgServ                     int      `json:"avg_serv"`                        //服务评分
+	DescPct                     float64  `json:"desc_pct"`                        //描述分击败同类店铺百分比
+	LgstPct                     float64  `json:"lgst_pct"`                        //物流分击败同类店铺百分比
+	ServPct                     float64  `json:"serv_pct"`                        //服务分击败同类店铺百分比
 }
 
 func (this *DuoduoKe) GoodsSearch(p *GoodsSearchParams) (*GoodsSearchResult, error) {
