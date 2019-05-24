@@ -58,6 +58,7 @@ type GoodsDetailInfo struct {
 	SoldQuantity                int      `json:"sold_quantity"`                   //已售卖件数
 	MinGroupPrice               int      `json:"min_group_price"`                 //最低价sku的拼团价，单位为分
 	MinNormalPrice              int      `json:"min_normal_price"`                //最低价sku的单买价，单位为分
+	SalesTip                    string   `json:"sales_tip"`                       //模糊销量
 }
 
 func (this *DuoduoKe) GoodsDetail(p *GoodsDetailParams) (*GoodsDetailResult, error) {

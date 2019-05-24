@@ -81,6 +81,8 @@ type GoodsSearchInfo struct {
 	DescPct                     float64  `json:"desc_pct"`                        //描述分击败同类店铺百分比
 	LgstPct                     float64  `json:"lgst_pct"`                        //物流分击败同类店铺百分比
 	ServPct                     float64  `json:"serv_pct"`                        //服务分击败同类店铺百分比
+	ActivityType                int      `json:"activity_type"`
+	SalesTip                    string   `json:"sales_tip"`
 }
 
 func (this *DuoduoKe) GoodsSearch(p *GoodsSearchParams) (*GoodsSearchResult, error) {

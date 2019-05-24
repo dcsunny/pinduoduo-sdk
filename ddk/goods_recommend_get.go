@@ -70,7 +70,7 @@ type GoodsRecommendInfo struct {
 	GoodsDesc            string  `json:"goods_desc"`              //商品描述
 	GoodsName            string  `json:"goods_name"`              //商品名称
 	GoodsID              int64   `json:"goods_id"`                //商品id
-	CreateAt             int     `json:"create_at"`               //创建时间
+	CreateAt             int64     `json:"create_at"`               //创建时间
 }
 
 func (this *DuoduoKe) GetGoodsRecommend(p *GoodsRecommendParams) (*GoodsRecommendResult, error) {
