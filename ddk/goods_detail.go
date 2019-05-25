@@ -9,7 +9,11 @@ import (
 查询多多进宝商品详情
 */
 type GoodsDetailParams struct {
-	GoodsIdList []int64 `json:"goods_id_list"` //商品ID，仅支持单个查询。例如：[123456]
+	GoodsIdList      []int64 `json:"goods_id_list"` //商品ID，仅支持单个查询。例如：[123456]
+	Pid              *string `json:"pid"`
+	CustomParameters *string `json:"custom_parameters"`
+	ZsDuoID          *int64  `json:"zs_duo_id"`
+	PlanType         int     `json:"plan_type"` //佣金优惠券对应推广类型，3：专属 4：招商
 }
 
 type GoodsDetailResult struct {
