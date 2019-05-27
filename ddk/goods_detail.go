@@ -13,7 +13,7 @@ type GoodsDetailParams struct {
 	Pid              *string `json:"pid,omitempty"`
 	CustomParameters *string `json:"custom_parameters,omitempty"`
 	ZsDuoID          *int64  `json:"zs_duo_id,omitempty"`
-	PlanType         int     `json:"plan_type"` //佣金优惠券对应推广类型，3：专属 4：招商
+	PlanType         *int    `json:"plan_type,omitempty"` //佣金优惠券对应推广类型，3：专属 4：招商
 }
 
 type GoodsDetailResult struct {
