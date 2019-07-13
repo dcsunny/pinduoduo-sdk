@@ -59,7 +59,6 @@ type GoodsDetailInfo struct {
 	GoodsDesc                   string   `json:"goods_desc"`                      //参与多多进宝的商品描述
 	GoodsImageUrl               string   `json:"goods_image_url"`                 //多多进宝商品主图
 	GoodsGalleryUrls            []string `json:"goods_gallery_urls"`              //商品轮播图
-	SoldQuantity                int      `json:"sold_quantity"`                   //已售卖件数
 	MinGroupPrice               int      `json:"min_group_price"`                 //最低价sku的拼团价，单位为分
 	MinNormalPrice              int      `json:"min_normal_price"`                //最低价sku的单买价，单位为分
 	SalesTip                    string   `json:"sales_tip"`                       //模糊销量

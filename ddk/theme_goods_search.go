@@ -31,7 +31,6 @@ type ThemeGoodsSearchInfo struct {
 	GoodsThumbnailUrl    string  `json:"goods_thumbnail_url"`     //商品缩略图
 	GoodsImageUrl        string  `json:"goods_image_url"`         //商品主图
 	GoodsQalleryUrls     string  `json:"goods_gallery_urls"`      //商品详情图列表
-	SoldQuantity         int     `json:"sold_quantity"`           //已售卖件数
 	MinGroupPrice        int     `json:"min_group_price"`         //最小拼团价格,单位为分
 	MinNormalPrice       int     `json:"min_normal_price"`        //最小单买价格,单位为分
 	MallName             string  `json:"mall_name"`               //店铺名称
@@ -45,6 +44,7 @@ type ThemeGoodsSearchInfo struct {
 	CouponRemainQuantity int     `json:"coupon_remain_quantity"`  //优惠券剩余数量
 	CouponStartTime      int64   `json:"coupon_start_time"`       //优惠券生效时间,UNIX时间戳
 	CouponEndTime        int64   `json:"coupon_end_time"`         //优惠券失效时间,UNIX时间戳
+	SalesTip             string  `json:"sales_tip"`
 }
 
 func (this *DuoduoKe) ThemeGoodsSearch(p *ThemeGoodsSearchParams) (*ThemeGoodsSearchResult, error) {

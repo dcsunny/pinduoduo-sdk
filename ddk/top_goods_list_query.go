@@ -27,7 +27,6 @@ type TopGoodsListQueryInfo struct {
 	GoodsThumbnailUrl    string   `json:"goods_thumbnail_url"`
 	GoodsImageUrl        string   `json:"goods_image_url"`
 	GoodsGalleryUrls     []string `json:"goods_gallery_urls"`
-	SoldQuantity         int      `json:"sold_quantity"`
 	MinGroupPrice        int      `json:"min_group_price"`
 	MinNormalPrice       int      `json:"min_normal_price"`
 	MallName             string   `json:"mall_name"`
@@ -55,6 +54,7 @@ type TopGoodsListQueryInfo struct {
 	DescPct              float64  `json:"desc_pct"`
 	LgstPct              float64  `json:"lgst_pct"`
 	ServPct              float64  `json:"serv_pct"`
+	SalesTip             string   `json:"sales_tip"`
 }
 
 func (this *DuoduoKe) TopGoodsListQuery(p *TopGoodsListQueryParams) (*TopGoodsListQueryResult, error) {

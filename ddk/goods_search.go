@@ -52,7 +52,6 @@ type GoodsSearchInfo struct {
 	GoodsThumbnailUrl           string   `json:"goods_thumbnail_url"`             //商品缩略图
 	GoodsImageUrl               string   `json:"goods_image_url"`                 //商品主图
 	GoodsGalleryUrls            []string `json:"goods_gallery_urls"`              //商品轮播图
-	SoldQuantity                int      `json:"sold_quantity"`                   //已售卖件数
 	MinGroupPrice               int      `json:"min_group_price"`                 //最小拼团价（单位为分）
 	MinNormalPrice              int      `json:"min_normal_price"`                //最小单买价格（单位为分）
 	MallName                    string   `json:"mall_name"`                       //店铺名字
