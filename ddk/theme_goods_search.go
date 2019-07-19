@@ -23,7 +23,6 @@ type ThemeGoodsSearchResult struct {
 
 type ThemeGoodsSearchInfo struct {
 	PromotionRate        int     `json:"promotion_rate"`          //佣金比例,千分比
-	GoodsEvalScore       float64 `json:"goods_eval_score"`        //商品评价分
 	GoodsEvalCount       int     `json:"goods_eval_count"`        //商品评价数量
 	GoodsID              int64   `json:"goods_id"`                //商品编码
 	GoodsName            string  `json:"goods_name"`              //商品名称
@@ -45,6 +44,9 @@ type ThemeGoodsSearchInfo struct {
 	CouponStartTime      int64   `json:"coupon_start_time"`       //优惠券生效时间,UNIX时间戳
 	CouponEndTime        int64   `json:"coupon_end_time"`         //优惠券失效时间,UNIX时间戳
 	SalesTip             string  `json:"sales_tip"`
+	DescTxt              string  `json:"desc_txt"`
+	ServTxt              string  `json:"serv_txt"`
+	LgstTxt              string  `json:"lgst_txt"`
 }
 
 func (this *DuoduoKe) ThemeGoodsSearch(p *ThemeGoodsSearchParams) (*ThemeGoodsSearchResult, error) {

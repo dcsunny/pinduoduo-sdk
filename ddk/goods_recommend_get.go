@@ -27,16 +27,9 @@ type GoodsRecommendInfo struct {
 	Rank                 string  `json:"rank"`                    //顺序
 	SaleNumToday         int     `json:"sale_num_today"`          //今日成交量
 	SaleNum24            int     `json:"sale_num24"`              //成交量
-	ServPct              float64 `json:"serv_pct"`                //服务评分击败同类店铺百分比
-	LgstPct              float64 `json:"lgst_pct"`                //物流评分击败同类店铺百分比
-	DescPct              float64 `json:"desc_pct"`                //描述评分击败同类店铺百分比
-	AvgServ              int     `json:"avg_serv"`                //服务评分
-	AvgLgst              int     `json:"avg_lgst"`                //物流评分
-	AvgDesc              int     `json:"avg_desc"`                //描述评分
 	ShareDesc            string  `json:"share_desc"`              //分享描述
 	CatID                int64   `json:"cat_id"`                  //商品类目id
 	GoodsEvalCount       int     `json:"goods_eval_count"`        //商品评价数量
-	GoodsEvalScore       float64 `json:"goods_eval_score"`        //商品评价分
 	MarketFee            int     `json:"market_fee"`              //市场服务费
 	GoodsRate            int     `json:"goods_rate"`              //商品等级
 	CouponPrice          int     `json:"coupon_price"`            //优惠券金额 分
@@ -70,7 +63,10 @@ type GoodsRecommendInfo struct {
 	GoodsDesc            string  `json:"goods_desc"`              //商品描述
 	GoodsName            string  `json:"goods_name"`              //商品名称
 	GoodsID              int64   `json:"goods_id"`                //商品id
-	CreateAt             int64     `json:"create_at"`               //创建时间
+	CreateAt             int64   `json:"create_at"`               //创建时间
+	DescTxt              string  `json:"desc_txt"`
+	ServTxt              string  `json:"serv_txt"`
+	LgstTxt              string  `json:"lgst_txt"`
 }
 
 func (this *DuoduoKe) GetGoodsRecommend(p *GoodsRecommendParams) (*GoodsRecommendResult, error) {

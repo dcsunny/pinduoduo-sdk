@@ -46,15 +46,11 @@ type TopGoodsListQueryInfo struct {
 	CouponStartTime      int64    `json:"coupon_start_time"`
 	CouponEndTime        int64    `json:"coupon_end_time"`
 	PromotionRate        int      `json:"promotion_rate"`
-	GoodsEvalScore       float64  `json:"goods_eval_score"`
 	GoodsEvalCount       int      `json:"goods_eval_count"`
-	AvgDesc              int      `json:"avg_desc"`
-	AvgLgst              int      `json:"avg_lgst"`
-	AvgServ              int      `json:"avg_serv"`
-	DescPct              float64  `json:"desc_pct"`
-	LgstPct              float64  `json:"lgst_pct"`
-	ServPct              float64  `json:"serv_pct"`
 	SalesTip             string   `json:"sales_tip"`
+	DescTxt              string   `json:"desc_txt"`
+	ServTxt              string   `json:"serv_txt"`
+	LgstTxt              string   `json:"lgst_txt"`
 }
 
 func (this *DuoduoKe) TopGoodsListQuery(p *TopGoodsListQueryParams) (*TopGoodsListQueryResult, error) {

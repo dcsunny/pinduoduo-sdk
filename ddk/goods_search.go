@@ -71,17 +71,21 @@ type GoodsSearchInfo struct {
 	CouponStartTime             int64    `json:"coupon_start_time"`               //优惠券生效时间，UNIX时间戳
 	CouponEndTime               int64    `json:"coupon_end_time"`                 //优惠券失效时间，UNIX时间戳
 	PromotionRate               int      `json:"promotion_rate"`                  //佣金比例，千分比
-	GoodsEvalScore              float64  `json:"goods_eval_score"`                //商品评价分
 	GoodsEvalCount              int      `json:"goods_eval_count"`                //商品评价数量
 	CatID                       int64    `json:"cat_id"`                          //商品类目id
-	AvgDesc                     int      `json:"avg_desc"`                        //描述评分
-	AvgLgst                     int      `json:"avg_lgst"`                        //物流评分
-	AvgServ                     int      `json:"avg_serv"`                        //服务评分
-	DescPct                     float64  `json:"desc_pct"`                        //描述分击败同类店铺百分比
-	LgstPct                     float64  `json:"lgst_pct"`                        //物流分击败同类店铺百分比
-	ServPct                     float64  `json:"serv_pct"`                        //服务分击败同类店铺百分比
 	ActivityType                int      `json:"activity_type"`
 	SalesTip                    string   `json:"sales_tip"`
+	DescTxt                     string   `json:"desc_txt"`
+	ServTxt                     string   `json:"serv_txt"`
+	LgstTxt                     string   `json:"lgst_txt"`
+	ServiceTags                 []int    `json:"service_tags"`            //服务标签: 4-送货入户并安装,5-送货入户,6-电子发票,9-坏果包赔,11-闪电退款,12-24小时发货,13-48小时发货,17-顺丰包邮,18-只换不修,19-全国联保,20-分期付款,24-极速退款,25-品质保障,26-缺重包退,27-当日发货,28-可定制化,29-预约配送,1000001-正品发票,1000002-送货入户并安装
+	CltCpnBatchSn               string   `json:"clt_cpn_batch_sn"`        //店铺收藏券id
+	CltCpnStartTime             int64    `json:"clt_cpn_start_time"`      //店铺收藏券起始时间
+	CltCpnEndTime               int64    `json:"clt_cpn_end_time"`        //店铺收藏券截止时间
+	CltCpnQuantity              int64    `json:"clt_cpn_quantity"`        //店铺收藏券总量
+	CltCpnRemainQuantity        int64    `json:"clt_cpn_remain_quantity"` //店铺收藏券剩余量
+	CltCpnDiscount              int64    `json:"clt_cpn_discount"`        //店铺收藏券面额，单位为分
+	CltCpnMinAmt                int64    `json:"clt_cpn_min_amt"`         //店铺收藏券使用门槛价格，单位为分
 }
 
 func (this *DuoduoKe) GoodsSearch(p *GoodsSearchParams) (*GoodsSearchResult, error) {

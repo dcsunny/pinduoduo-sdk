@@ -33,18 +33,11 @@ type GoodsDetailInfo struct {
 	MallCouponStartTime         int64    `json:"mall_coupon_start_time"`          //店铺券开始使用时间
 	MallCouponEndTime           int64    `json:"mall_coupon_end_time"`            //店铺券结束使用时间
 	MallID                      int64    `json:"mall_id"`                         //店铺id
-	ServPct                     float64  `json:"serv_pct"`                        //服务评分击败同类店铺百分比
-	LgstPct                     float64  `json:"lgst_pct"`                        //物流评分击败同类店铺百分比
-	DescPct                     float64  `json:"desc_pct"`                        //描述评分击败同类店铺百分比
 	OptIds                      []int64  `json:"opt_ids"`                         //商品标签ID
-	AvgServ                     int      `json:"avg_serv"`                        //服务评分
-	AvgLgst                     int      `json:"avg_lgst"`                        //物流评分
-	AvgDesc                     int      `json:"avg_desc"`                        //描述评分
 	CatIds                      []int64  `json:"cat_ids"`                         //商品一~四级类目ID列表
 	CatID                       int64    `json:"cat_id"`                          //商品类目ID，使用pdd.goods.cats.get接口获取
 	CouponRemainQuantity        int      `json:"coupon_remain_quantity"`          //优惠券剩余数量
 	GoodsEvalCount              int      `json:"goods_eval_count"`                //商品评价数
-	GoodsEvalScore              float64  `json:"goods_eval_score"`                //商品评价分
 	OptName                     string   `json:"opt_name"`                        //商品标签名称
 	CouponMinOrderAmount        int      `json:"coupon_min_order_amount"`         //优惠券门槛金额，单位为分
 	CouponDiscount              int      `json:"coupon_discount"`                 //优惠券面额，单位为分
@@ -62,6 +55,17 @@ type GoodsDetailInfo struct {
 	MinGroupPrice               int      `json:"min_group_price"`                 //最低价sku的拼团价，单位为分
 	MinNormalPrice              int      `json:"min_normal_price"`                //最低价sku的单买价，单位为分
 	SalesTip                    string   `json:"sales_tip"`                       //模糊销量
+	DescTxt                     string   `json:"desc_txt"`                        //描述分
+	ServTxt                     string   `json:"serv_txt"`                        //物流分
+	LgstTxt                     string   `json:"lgst_txt"`                        //服务分
+	ServiceTags                 []int    `json:"service_tags"`                    //服务标签: 4-送货入户并安装,5-送货入户,6-电子发票,9-坏果包赔,11-闪电退款,12-24小时发货,13-48小时发货,17-顺丰包邮,18-只换不修,19-全国联保,20-分期付款,24-极速退款,25-品质保障,26-缺重包退,27-当日发货,28-可定制化,29-预约配送,1000001-正品发票,1000002-送货入户并安装
+	CltCpnBatchSn               string   `json:"clt_cpn_batch_sn"`                //店铺收藏券id
+	CltCpnStartTime             int64    `json:"clt_cpn_start_time"`              //店铺收藏券起始时间
+	CltCpnEndTime               int64    `json:"clt_cpn_end_time"`                //店铺收藏券截止时间
+	CltCpnQuantity              int64    `json:"clt_cpn_quantity"`                //店铺收藏券总量
+	CltCpnRemainQuantity        int64    `json:"clt_cpn_remain_quantity"`         //店铺收藏券剩余量
+	CltCpnDiscount              int64    `json:"clt_cpn_discount"`                //店铺收藏券面额，单位为分
+	CltCpnMinAmt                int64    `json:"clt_cpn_min_amt"`                 //店铺收藏券使用门槛价格，单位为分
 }
 
 func (this *DuoduoKe) GoodsDetail(p *GoodsDetailParams) (*GoodsDetailResult, error) {
