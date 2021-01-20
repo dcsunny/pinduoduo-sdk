@@ -22,8 +22,9 @@ type GoodsPidQueryResult struct {
 }
 
 type GoodsPidQueryInfo struct {
-	Name       string `json:"name"`        //推广位名称
+	Name       string `json:"pid_name"`    //推广位名称
 	PID        string `json:"p_id"`        //推广位ID
+	Status     int    `json:"status"`      //推广位状态：0-正常，1-封禁
 	CreateTime int64  `json:"create_time"` //推广位生成时间
 }
 
