@@ -101,6 +101,7 @@ type GoodsSearchInfo struct {
 	PredictPromotionRate        int64    `json:"predict_promotion_rate"`          //比价行为预判定佣金，需要用户备案
 	SearchID                    string   `json:"search_id"`                       //搜索id，建议生成推广链接时候填写，提高收益
 	PlanType                    int      `json:"plan_type"`                       //推广计划类型 3:定向 4:招商
+	GoodsSign                   string   `json:"goods_sign"`
 }
 
 func (this *DuoduoKe) GoodsSearch(p *GoodsSearchParams) (*GoodsSearchResult, error) {

@@ -10,7 +10,10 @@ import (
 */
 type GoodsRecommendResult struct {
 	GoodsBasicDetailResponse struct {
-		List []GoodsRecommendInfo `json:"list"`
+		List     []GoodsRecommendInfo `json:"list"`
+		ListID   string               `json:"list_id"`
+		SearchID string               `json:"search_id"`
+		Total    string               `json:"total"`
 	} `json:"goods_basic_detail_response"`
 	common.CommonResult
 }
@@ -67,6 +70,8 @@ type GoodsRecommendInfo struct {
 	DescTxt              string  `json:"desc_txt"`
 	ServTxt              string  `json:"serv_txt"`
 	LgstTxt              string  `json:"lgst_txt"`
+	SearchID             string  `json:"search_id"`
+	GoodsSign            string  `json:"goods_sign"`
 }
 
 func (this *DuoduoKe) GetGoodsRecommend(p *GoodsRecommendParams) (*GoodsRecommendResult, error) {

@@ -9,12 +9,11 @@ import (
 查询多多进宝商品详情
 */
 type GoodsDetailParams struct {
-	GoodsIdList      []int64 `json:"goods_id_list"` //商品ID，仅支持单个查询。例如：[123456]
 	Pid              *string `json:"pid,omitempty"` //自定义参数
 	CustomParameters *string `json:"custom_parameters,omitempty"`
 	ZsDuoID          *int64  `json:"zs_duo_id,omitempty"` //	招商多多客ID
-	PlanType         *int    `json:"plan_type,omitempty"` //佣金优惠券对应推广类型，3：专属 4：招商
 	SearchId         *string `json:"search_id,omitempty"` //搜索id，建议填写，提高收益。来自pdd.ddk.goods.recommend.get、pdd.ddk.goods.search、pdd.ddk.top.goods.list.query等接口
+	GoodsSign        *string `json:"goods_sign"`
 }
 
 type GoodsDetailResult struct {

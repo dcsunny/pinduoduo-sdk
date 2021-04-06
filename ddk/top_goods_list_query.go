@@ -14,8 +14,10 @@ type TopGoodsListQueryParams struct {
 
 type TopGoodsListQueryResult struct {
 	TopGoodsListGetResponse struct {
-		List  []TopGoodsListQueryInfo `json:"list"`
-		Total int                     `json:"total"`
+		List     []TopGoodsListQueryInfo `json:"list"`
+		ListID   string                  `json:"list_id"`
+		SearchID string                  `json:"search_id"`
+		Total    int                     `json:"total"`
 	} `json:"top_goods_list_get_response"`
 	common.CommonResult
 }
@@ -51,6 +53,8 @@ type TopGoodsListQueryInfo struct {
 	DescTxt              string   `json:"desc_txt"`
 	ServTxt              string   `json:"serv_txt"`
 	LgstTxt              string   `json:"lgst_txt"`
+	SearchID             string   `json:"search_id"`
+	GoodsSign            string   `json:"goods_sign"`
 }
 
 func (this *DuoduoKe) TopGoodsListQuery(p *TopGoodsListQueryParams) (*TopGoodsListQueryResult, error) {
