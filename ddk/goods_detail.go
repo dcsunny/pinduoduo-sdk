@@ -75,6 +75,7 @@ type GoodsDetailInfo struct {
 	PlanType                    int      `json:"plan_type"`                       //推广计划类型 3:定向 4:招商
 	MerchantType                int      `json:"merchant_type"`                   //店铺类型，1-个人，2-企业，3-旗舰店，4-专卖店，5-专营店，6-普通店
 	MallCps                     int      `json:"mall_cps"`                        //该商品所在店铺是否参与全店推广，0：否，1：是
+	GoodsSign                   string   `json:"goods_sign"`
 }
 
 func (this *DuoduoKe) GoodsDetail(p *GoodsDetailParams) (*GoodsDetailResult, error) {
