@@ -2,3 +2,14 @@
 .idea
 .idea/
 .idea/vcs.xml
+/.vscode
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.a
+*.tmp
+/TODO
+/logs
