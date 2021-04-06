@@ -9,13 +9,14 @@ import (
 生成红包推广链接
 */
 type RpPromUrlGenerateParams struct {
-	GenerateShortUrl     *bool   `json:"generate_short_url,omitempty"`        //是否生成短链接。true-是，false-否，默认false
-	GenerateWeApp        *bool   `json:"generate_we_app,omitempty"`           //是否生成小程序链接。true-是，false-否，默认false
-	PIdList              string  `json:"p_id_list"`                           //推广位列表，例如：["60005_612"]
-	CustomParameters     *string `json:"custom_parameters,omitempty"`         //自定义参数，为链接打上自定义标签。自定义参数最长限制64个字节。
-	GenerateWeappWebview *bool   `json:"generate_weapp_webview,omitempty"`    //是否唤起微信客户端， 默认false 否，true 是
-	WeAppWebViewShortUrl *bool   `json:"we_app_web_view_short_url,omitempty"` //唤起微信app推广短链接
-	WeAppWebWiewUrl      *bool   `json:"we_app_web_wiew_url,omitempty"`       //唤起微信app推广链接
+	GenerateShortUrl     *bool     `json:"generate_short_url,omitempty"`        //是否生成短链接。true-是，false-否，默认false
+	GenerateWeApp        *bool     `json:"generate_we_app,omitempty"`           //是否生成小程序链接。true-是，false-否，默认false
+	PIdList              *[]string `json:"p_id_list"`                           //推广位列表，例如：["60005_612"]
+	CustomParameters     *string   `json:"custom_parameters,omitempty"`         //自定义参数，为链接打上自定义标签。自定义参数最长限制64个字节。
+	GenerateWeappWebview *bool     `json:"generate_weapp_webview,omitempty"`    //是否唤起微信客户端， 默认false 否，true 是
+	WeAppWebViewShortUrl *bool     `json:"we_app_web_view_short_url,omitempty"` //唤起微信app推广短链接
+	WeAppWebWiewUrl      *bool     `json:"we_app_web_wiew_url,omitempty"`       //唤起微信app推广链接
+	ChannelType          *int      `json:"channel_type,omitempty"`
 }
 
 type RpPromUrlGenerateResult struct {

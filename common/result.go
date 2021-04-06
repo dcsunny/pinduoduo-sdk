@@ -10,6 +10,8 @@ type CommonResult struct {
 	ErrorResponse struct {
 		ErrorCode int    `json:"error_code"`
 		ErrorMsg  string `json:"error_msg"`
+		SubMsg    string `json:"sub_msg"`
+		SubCode   string `json:"sub_code"`
 	} `json:"error_response"`
 }
 

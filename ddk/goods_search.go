@@ -107,9 +107,7 @@ type GoodsSearchInfo struct {
 func (this *DuoduoKe) GoodsSearch(p *GoodsSearchParams) (*GoodsSearchResult, error) {
 	apiType := "pdd.ddk.goods.search"
 	params, paramsURL := util.FormatURLParams(p)
-
 	url := this.GetURL(apiType, "", params, paramsURL)
-
 	var result GoodsSearchResult
 
 	err := util.HttpPOST(url, nil, &result)

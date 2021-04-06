@@ -10,6 +10,7 @@ type TopGoodsListQueryParams struct {
 	SortType int    `json:"sort_type"`
 	Offset   int    `json:"offset,omitempty"`
 	Limit    int    `json:"limit,omitempty"`
+	ListID   string `json:"list_id"`
 }
 
 type TopGoodsListQueryResult struct {
