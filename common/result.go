@@ -12,6 +12,7 @@ type CommonResult struct {
 		ErrorMsg  string `json:"error_msg"`
 		SubMsg    string `json:"sub_msg"`
 		SubCode   string `json:"sub_code"`
+		RequestId string `json:"request_id"`
 	} `json:"error_response"`
 }
 

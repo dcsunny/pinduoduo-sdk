@@ -8,6 +8,7 @@ import (
 /**
 多多客生成单品推广小程序二维码url
 */
+
 type WeappQrcodeUrlGenParams struct {
 	PID              string  `json:"p_id"`                        //推广位ID
 	GoodsIdList      []int64 `json:"goods_id_list"`               //商品ID，仅支持单个查询

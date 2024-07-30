@@ -18,6 +18,7 @@ func HttpPOST(url string, paramsBody io.Reader, result interface{}) error {
 	if err != nil {
 		return err
 	}
+	//http.DefaultClient.Timeout = 30 * time.Second
 	res, err := http.DefaultClient.Do(req)
 	defer res.Body.Close()
 	if err != nil {
