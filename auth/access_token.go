@@ -9,16 +9,11 @@ import (
   授权 使用code换access_token
 */
 
-type ReportOrPromotionLinkParams struct {
+type GetAccessTokenByCodeParams struct {
 	Code string `json:"code"` //授权code，grantType==authorization_code 时需要
 }
 
-type SpecialParam struct {
-	Key   string `json:"$key"`
-	Value string `json:"$value"`
-}
-
-type ReportOrPromotionLinkResult struct {
+type GetAccessTokenByCodeResult struct {
 	PopAuthTokenCreateResponse struct {
 		AccessToken           string   `json:"access_token"`             //access_token
 		ExpiresAt             int      `json:"expires_at"`               //access_token过期时间点
@@ -42,11 +37,11 @@ type ReportOrPromotionLinkResult struct {
 	common.CommonResult
 }
 
-func (this *Auth) ReportOrPromotionLink(p *ReportOrPromotionLinkParams) (*ReportOrPromotionLinkResult, error) {
+func (this *Auth) GetAccessTokenByCode(p *GetAccessTokenByCodeParams) (*GetAccessTokenByCodeResult, error) {
 	apiType := `pdd.pop.auth.token.create`
 	params, paramsURL := util.FormatURLParams(p)
 	url := this.GetURL(apiType, "", params, paramsURL)
-	var result ReportOrPromotionLinkResult
+	var result GetAccessTokenByCodeResult
 	err := util.HttpPOST(url, nil, &result)
 	if err != nil {
 		return nil, err
