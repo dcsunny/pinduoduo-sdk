@@ -71,10 +71,10 @@ type ReportOrPromotionLinkResult struct {
 	common.CommonResult
 }
 
-func (this *DuoduoKe) ReportOrPromotionLink(p *ReportOrPromotionLinkParams) (*ReportOrPromotionLinkResult, error) {
+func (this *DuoduoKe) ReportOrPromotionLink(p *ReportOrPromotionLinkParams, accessToken string) (*ReportOrPromotionLinkResult, error) {
 	apiType := `pdd.ddk.oauth.goods.prom.url.generate`
 	params, paramsURL := util.FormatURLParams(p)
-	url := this.GetURL(apiType, "", params, paramsURL)
+	url := this.GetURL(apiType, accessToken, params, paramsURL)
 	var result ReportOrPromotionLinkResult
 	err := util.HttpPOST(url, nil, &result)
 	if err != nil {

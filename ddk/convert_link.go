@@ -31,10 +31,10 @@ type ConvertLinkResult struct {
 	common.CommonResult
 }
 
-func (this *DuoduoKe) ConvertLink(p *ConvertLinkParams) (*ConvertLinkResult, error) {
+func (this *DuoduoKe) ConvertLink(p *ConvertLinkParams, accessToken string) (*ConvertLinkResult, error) {
 	apiType := `pdd.ddk.oauth.goods.zs.unit.url.gen`
 	params, paramsURL := util.FormatURLParams(p)
-	url := this.GetURL(apiType, "", params, paramsURL)
+	url := this.GetURL(apiType, accessToken, params, paramsURL)
 	var result ConvertLinkResult
 	err := util.HttpPOST(url, nil, &result)
 	if err != nil {
