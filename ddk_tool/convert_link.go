@@ -1,4 +1,4 @@
-package ddk
+package ddk_tool
 
 import (
 	"github.com/dcsunny/pinduoduo-sdk/common"
@@ -31,7 +31,7 @@ type ConvertLinkResult struct {
 	common.CommonResult
 }
 
-func (this *DuoduoKe) ConvertLink(p *ConvertLinkParams, accessToken string) (*ConvertLinkResult, error) {
+func (this *DuoduoKeTool) ConvertLink(p *ConvertLinkParams, accessToken string) (*ConvertLinkResult, error) {
 	apiType := `pdd.ddk.oauth.goods.zs.unit.url.gen`
 	params, paramsURL := util.FormatURLParams(p)
 	url := this.GetURL(apiType, accessToken, params, paramsURL)
