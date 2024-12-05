@@ -8,6 +8,7 @@ import (
 type OauthRpPomUrlGenerateParams struct {
 	Amount                     *int64                      `json:"amount,omitempty"`
 	ChannelType                *int                        `json:"channel_type,omitempty"`
+	CustomParameters           *string                     `json:"custom_parameters,omitempty"`
 	DiyOneYuanParam            *DiyOneYuanParam            `json:"diy_one_yuan_param,omitempty"`
 	DiyPromoActCollectionParam *DiyPromoActCollectionParam `json:"diy_promo_act_collection_param,omitempty"`
 	DiyRedPacketParam          *DiyRedPacketParam          `json:"diy_red_packet_param,omitempty"`
