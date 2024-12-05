@@ -6,22 +6,22 @@ import (
 )
 
 type OauthRpPomUrlGenerateParams struct {
-	Amount                     *int64                      `json:"amount,omitempty"`
-	ChannelType                *int                        `json:"channel_type,omitempty"`
-	CustomParameters           *string                     `json:"custom_parameters,omitempty"`
-	DiyOneYuanParam            *DiyOneYuanParam            `json:"diy_one_yuan_param,omitempty"`
-	DiyPromoActCollectionParam *DiyPromoActCollectionParam `json:"diy_promo_act_collection_param,omitempty"`
-	DiyRedPacketParam          *DiyRedPacketParam          `json:"diy_red_packet_param,omitempty"`
-	DiySpRedPacketParam        *DiySpRedPacketParam        `json:"diy_sp_red_packet_param,omitempty"`
-	ExtParams                  map[string]string           `json:"ext_params,omitempty"`
-	GenerateQqApp              *bool                       `json:"generate_qq_app,omitempty"`
-	GenerateSchemaUrl          *bool                       `json:"generate_schema_url,omitempty"`
-	GenerateShortLink          *bool                       `json:"generate_short_link,omitempty"`
-	GenerateShortUrl           *bool                       `json:"generate_short_url,omitempty"`
-	GenerateWeApp              *bool                       `json:"generate_we_app,omitempty"`
+	Amount                     *int64                      `json:"amount,omitempty"`                         //初始金额（单位分），有效金额枚举值：300、500、700、1100和1600，默认300
+	ChannelType                *int                        `json:"channel_type,omitempty"`                   //营销工具类型，必填
+	CustomParameters           *string                     `json:"custom_parameters,omitempty"`              //自定义参数，为链接打上自定义标签；
+	DiyOneYuanParam            *DiyOneYuanParam            `json:"diy_one_yuan_param,omitempty"`             //一元购自定义参数，json格式
+	DiyPromoActCollectionParam *DiyPromoActCollectionParam `json:"diy_promo_act_collection_param,omitempty"` //商品goodsSign，支持通过goodsSign查询商品。
+	DiyRedPacketParam          *DiyRedPacketParam          `json:"diy_red_packet_param,omitempty"`           //大促会场集合页参数
+	DiySpRedPacketParam        *DiySpRedPacketParam        `json:"diy_sp_red_packet_param,omitempty"`        //	超级红包自定义参数，json格式
+	ExtParams                  map[string]string           `json:"ext_params,omitempty"`                     //扩展参数
+	GenerateQqApp              *bool                       `json:"generate_qq_app,omitempty"`                //是否生成qq小程序
+	GenerateSchemaUrl          *bool                       `json:"generate_schema_url,omitempty"`            //是否返回 schema URL
+	GenerateShortLink          *bool                       `json:"generate_short_link,omitempty"`            //是否生成微信shortLink，该字段支持超红c端活动页、超红二合一、b端推品页，单个渠道每天生成的shortLink数量有限，请合理生成shortLink链接
+	GenerateShortUrl           *bool                       `json:"generate_short_url,omitempty"`             //是否生成短链接
+	GenerateWeApp              *bool                       `json:"generate_we_app,omitempty"`                //是否生成拼多多福利券微信小程序推广信息
 	PIdList                    []string                    `json:"p_id_list"`
 	ScratchCardAmount          *int64                      `json:"scratch_card_amount,omitempty"`
-	TmccParam                  TmccParam                   `json:"tmcc_param,omitempty"`
+	TmccParam                  *TmccParam                  `json:"tmcc_param,omitempty"`
 	ZsDuoId                    *int64                      `json:"zs_duo_id,omitempty"`
 	DiyCouponRebateParam       *DiyCouponRebateParam       `json:"diy_coupon_rebate_param,omitempty"`
 }
